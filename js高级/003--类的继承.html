@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 类的继承
+        class Father {
+            constructor() {
+
+            }
+            // 这个是方法 需要添加小  () 
+            money() {
+                console.log(100);
+            }
+        }
+        class Son extends Father {
+
+        }
+
+        var son = new Son();
+        son.money();
+
+    </script>
+</body>
+</html>
