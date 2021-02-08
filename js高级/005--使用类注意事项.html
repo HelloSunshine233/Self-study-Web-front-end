@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+        class Star {
+            constructor(uname, age) {
+                this.uname = uname;
+                this.age = age;
+                // 这句话的意思好像是先把方法写到预加载的上面去
+                this.sing();
+                this.btn = document.querySelector('button');
+                this.btn.click = this.sing();
+            }
+            sing() {
+                // 类里面的共有的属性和方法一定要加this使用
+                console.log(this.age);
+            }
+        }
+        // 此时的传参就传了一个uname
+        var ldh = new Star('刘德华');
+    </script>
+</body>
+</html>
