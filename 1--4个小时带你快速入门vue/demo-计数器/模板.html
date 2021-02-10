@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>计数器</title>
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <!-- html结构 -->
+  <div id="app">
+    <!-- 计数器功能区域 -->
+    <div class="input-num">   
+      <button @click="sub"> <!-- 这个最后面就是跟着方法的 -->
+        -
+      </button>
+      <span>{{ num }}</span>
+      <button v-on:click="add">
+        +
+      </button>
+    </div>
+    <img src="http://www.itheima.com/images/logo.png" alt="" />
+  </div>
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- 编码 -->
+  <script>
+    // 创建Vue实例
+    var app = new Vue({
+        el: "#app",
+        data: {
+          num: 1,
+          max: 10,
+          min: 0
+        }, // 这个地方的逗号忘记放了
+        methods: {
+          sub() {
+            if(this.num > this.min) {
+              this.num--;
+            } else {
+              alert("别点了，到底了");
+            }
+          },
+          add() {
+            if(this.num < this.max) {
+              this.num++;
+            } else {
+              alert("别点了，到头了");
+            }
+          }
+        }
+    });
+  </script>
+
+</body>
+
+</html>
