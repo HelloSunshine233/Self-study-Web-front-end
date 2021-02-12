@@ -37,7 +37,7 @@
           <img src="images/player_bar.png" class="play_bar" />
           <!-- 黑胶碟片 -->
           <img src="images/disc.png" class="disc autoRotate" />
-          <img src="images/cover.png" class="cover autoRotate" />
+          <img :src="musicCover" class="cover autoRotate" />
         </div>
         <!-- 评论容器 -->
         <div class="comment_wrapper">
@@ -55,7 +55,8 @@
         </div>
       </div>
       <div class="audio_con">
-        <audio ref='audio'  src="" controls autoplay loop class="myaudio"></audio>
+        <!-- 双向绑定的:src   这个怎么忘记了 -->
+        <audio ref='audio'  :src="musicUrl" controls autoplay loop class="myaudio"></audio>
       </div>
       <div class="video_con"  style="display: none;">
         <video  controls="controls"></video>

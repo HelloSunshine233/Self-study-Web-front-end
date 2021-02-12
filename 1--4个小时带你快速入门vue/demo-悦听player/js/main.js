@@ -36,6 +36,11 @@
     1. 点击播放（v-on 自定义参数）
     2. 歌曲的播放地址（接口 歌曲id）
     3. 歌曲的地址设置(v-bind)
+  三 歌曲封面
+    1. 点击播放（增加逻辑）
+    2. 歌曲封面获取（接口 歌曲id）
+    3. 歌曲封面设置（v-bind）
+  四 
 */
 var app = new Vue({
   // el:"player",
@@ -44,8 +49,11 @@ var app = new Vue({
     // 查询关键字
     query: "",
     //歌曲数组
-    musicList: []
-
+    musicList: [],
+    // 歌曲地址
+    musicUrl: "",
+    // 歌曲封面
+    musicCover:""
 
   },
   methods:{
@@ -56,7 +64,7 @@ var app = new Vue({
       // keywords 关键词的问题不是太了解
       axios.get("https://autumnfish.cn/search?keywords=" + this.query).then(
         function(response){
-        console.log(response.data.result.songs);
+        // console.log(response.data.result.songs);
         that.musicList = response.data.result.songs;
         // console.log(response.data.result.songs);
       },function(err){}
@@ -66,8 +74,26 @@ var app = new Vue({
     // 当下面的方法的定义名出现波浪线的时候就是上面方法最后没有添加逗号 ,
     // 这个function中的（参数）  就是传参的作用
     playMusic:function(musicId) {
-      console.log(musicId);
-    }
+      var that = this;
+      // console.log(musicId);
+      axios.get("https://autumnfish.cn/song/url?id=" + musicId).then(
+        function(response) {
+          // console.log(response);
+          // console.log(response.data.data[0].url);
+          that.musicUrl = response.data.data[0].url;
+        },
+        function(err) {}
+      );
 
+      // 歌曲详情获取
+      axios.get("https://autumnfish.cn/song/detail?ids=" + musicId).then(
+        function(response) {
+          // console.log(response);
+          // console.log(response.data.songs[0].al.picUrl);
+          // 后面把这个变量双向绑定
+          that.musicCover = response.data.songs[0].al.picUrl;
+        },function(err) {}
+      );
+    }
   }
 });
