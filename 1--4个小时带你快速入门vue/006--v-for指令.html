@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>倒逼学习法</title>
+</head>
+<body>
+  <!-- 
+    1. v-for指令的作用是：根据数据生成列表结构
+    2. 数组经常和v-for结合使用
+   -->
+  <div id="app">
+    <input type="button" value="添加数据" @click="add">
+    <input type="button" value="移除数据" @click="remove">
+    <ul>
+      <li v-for="(it,index) in arr">
+        {{ index+1 }}黑马程序员校区:{{ it }}
+      </li>
+    </ul>
+    <h2 v-for="item in vegetables" v-bind:title="item.name">
+      {{ item.name}}
+    </h2>
+  </div>
+  <!-- 1. 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el:"#app",
+      data:{
+        arr:["北京","上海","广州","深圳"],
+        // 定义的是一个数组，放在data里面的
+        vegetables:[
+          {name:"西蓝花炒蛋"},
+          {name:"西红柿鸡蛋汤"}
+        ]
+      },
+      // 数据的变增测试
+      methods:{
+        // 方法   都是通过点击事件来完成的，等来绑定的
+        add:function() {
+          // 数据追加效果
+          this.vegetables.push({ name:"花菜炒蛋" })
+        },
+        remove:function() {
+          // 移除
+          this.vegetables.shift();
+        }
+      }
+    })
+  </script>
+</body>
+</html>
