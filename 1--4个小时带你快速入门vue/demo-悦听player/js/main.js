@@ -44,7 +44,10 @@
     1. 点击播放（增加逻辑）
     2. 歌曲评获取（接口 歌曲id）
     3. 歌曲评论渲染（v-for）
-  五 
+  五 播放动画
+    1. 监听音乐播放（v-on play）
+    2. 监听音乐暂停（v-on pause）
+    3. 操纵类名（v-bind 对象）
 */
 var app = new Vue({
   // el:"player",
@@ -57,9 +60,11 @@ var app = new Vue({
     // 歌曲地址
     musicUrl: "",
     // 歌曲封面
-    musicCover:"",
+    musicCover: "",
     // 歌曲评论
-    hotComments: []
+    hotComments: [],
+    // 动画播放状态
+    isPlaying: false
 
   },
   methods:{
@@ -109,6 +114,15 @@ var app = new Vue({
           that.hotComments = response.data.hotComments;
       },function(err) {});
 
+    },
+    play:function() {
+      // console.log("play");
+      this.isPlaying = true;
+    },
+    pause:function() {
+      // console.log("pause");
+      this.isPlaying = false;
     }
+
   }
 });

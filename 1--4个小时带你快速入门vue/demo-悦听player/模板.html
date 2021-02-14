@@ -33,7 +33,9 @@
           <img src="images/line.png" class="switch_btn" alt="">
         </div>
         <!-- 歌曲信息容器 -->
-        <div class="player_con" class="playing">
+        <!-- 1. 这里改变的是 :class  = （v-bind:） 的状态 -->
+        <!-- 2. 这个地方是改变了那个 类名的动态变化真的厉害 -->
+        <div class="player_con" :class="{playing:isPlaying}">
           <img src="images/player_bar.png" class="play_bar" />
           <!-- 黑胶碟片 -->
           <img src="images/disc.png" class="disc autoRotate" />
@@ -45,7 +47,7 @@
           <div class='comment_list'>
             <dl v-for="item in hotComments">
               <dt><img :src="item.user.avatarUrl" alt=""></dt>
-              <dd class="name">{{item.nickname}}</dd>
+              <dd class="name">{{ item.user.nickname}}</dd>
               <dd class="detail" >
                 {{ item.content }}
               </dd>
@@ -56,7 +58,7 @@
       </div>
       <div class="audio_con">
         <!-- 双向绑定的:src   这个怎么忘记了 -->
-        <audio ref='audio'  :src="musicUrl" controls autoplay loop class="myaudio"></audio>
+        <audio ref='audio' @play="play" @pause="pause" :src="musicUrl" controls autoplay loop class="myaudio"></audio>
       </div>
       <div class="video_con"  style="display: none;">
         <video  controls="controls"></video>
