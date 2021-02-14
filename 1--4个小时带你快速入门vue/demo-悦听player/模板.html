@@ -43,11 +43,11 @@
         <div class="comment_wrapper">
           <h5 class='title'>热门留言</h5>
           <div class='comment_list'>
-            <dl >
-              <dt><img src="./images/person.png" alt=""></dt>
-              <dd class="name">盐焗西兰花</dd>
-              <dd class="detail">
-                绝对值得一听，吹爆
+            <dl v-for="item in hotComments">
+              <dt><img :src="item.user.avatarUrl" alt=""></dt>
+              <dd class="name">{{item.nickname}}</dd>
+              <dd class="detail" >
+                {{ item.content }}
               </dd>
             </dl>
           </div>

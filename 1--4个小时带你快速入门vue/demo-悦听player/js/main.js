@@ -40,7 +40,11 @@
     1. 点击播放（增加逻辑）
     2. 歌曲封面获取（接口 歌曲id）
     3. 歌曲封面设置（v-bind）
-  四 
+  四 歌曲评论
+    1. 点击播放（增加逻辑）
+    2. 歌曲评获取（接口 歌曲id）
+    3. 歌曲评论渲染（v-for）
+  五 
 */
 var app = new Vue({
   // el:"player",
@@ -53,7 +57,9 @@ var app = new Vue({
     // 歌曲地址
     musicUrl: "",
     // 歌曲封面
-    musicCover:""
+    musicCover:"",
+    // 歌曲评论
+    hotComments: []
 
   },
   methods:{
@@ -94,6 +100,15 @@ var app = new Vue({
           that.musicCover = response.data.songs[0].al.picUrl;
         },function(err) {}
       );
+
+      // 歌曲评论获取
+      axios.get("https://autumnfish.cn/comment/hot?type=0&id=" + musicId).then(
+        function(response){
+          // console.log(response);
+          // console.log(response.data.hotComments);
+          that.hotComments = response.data.hotComments;
+      },function(err) {});
+
     }
   }
 });
