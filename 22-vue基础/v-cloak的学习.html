@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* [v-cloak] {
+      display: none;
+    } */
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- 使用 v-cloak 能够解决 插值表达式闪烁的问题 -->
+    <p>{{ msg }}</p>
+  </div>
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el:"#app",
+      data:{
+        msg:"123"
+      }
+    })
+  </script>
+
+</body>
+</html>

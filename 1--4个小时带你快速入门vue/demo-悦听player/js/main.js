@@ -48,6 +48,11 @@
     1. 监听音乐播放（v-on play）
     2. 监听音乐暂停（v-on pause）
     3. 操纵类名（v-bind 对象）
+  六 播放mv
+    1. mv图标显示（v-if）
+    2. mv地址获取（接口 mvid）
+    3. 遮罩层（v-show v-on）
+    4. mv地址设置（v-bind）
 */
 var app = new Vue({
   // el:"player",
@@ -64,7 +69,11 @@ var app = new Vue({
     // 歌曲评论
     hotComments: [],
     // 动画播放状态
-    isPlaying: false
+    isPlaying: false,
+    // 遮罩层的显示状态
+    isShow: false,
+    // mv地址
+    mvUrl: ""
 
   },
   methods:{
@@ -122,6 +131,20 @@ var app = new Vue({
     pause:function() {
       // console.log("pause");
       this.isPlaying = false;
+    },
+    playMV:function(mvid) {
+      var that = this;
+      axios.get("https://autumnfish.cn/mv/url?id=" + mvid).then(
+        function(response) {
+          // console.log(response.data.data.url);
+          that.isShow = true;
+          that.mvUrl = response.data.data.url;        
+        },
+        function(err) {})
+    },
+    //隐藏
+    hide:function() {
+      this.isShow = false;
     }
 
   }
