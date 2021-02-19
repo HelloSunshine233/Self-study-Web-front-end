@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    
+    <input type="button" value="开始" @click="lang">
+    <input type="button" value="结束" @click="stop">
+    <p>{{ msg }}</p>
+
+  </div>
+  <!-- 1. 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '猥琐发育，别浪~~！',
+        // Interval:'null'
+        intervalId: null //在data上定义 定时器ID
+      },
+      methods: {
+        lang () {
+          // 内部的this指向VM实例
+          // 外部的this也指向VM实例
+          // 此时的 => 就是可以让里面的数据， 不用加this，就可以实现里外的双向的问题
+          if (this.intervalId != null) return;
+
+          // var intervalId= setInterval(() => {
+          // 这是一个变量，只能用this，不是用var 去定义
+          this.intervalId= setInterval(() => {
+
+            var start = this.msg.substring(0, 1)
+            var end = this.msg.substring(1)
+            this.msg = end + start
+          }, 400);
+        },
+
+        // 注意： VM实例，会监听自己身上 data 中所有数据的改变，只要数据一发生变化，就会自动把 最新的数据，
+        // 从data 上同步到页面中去；【好处：程序员只需要关心数据，不需要考虑如何重新渲染DOM页面】
+        // 停止
+        // stop:function() {}
+        stop() {
+          clearInterval(this.intervalId);
+          this.intervalId = null;
+        }
+
+      }
+    })
+  </script>
+</body>
+</html>

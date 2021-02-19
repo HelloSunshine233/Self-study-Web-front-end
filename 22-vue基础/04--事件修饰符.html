@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .inner {
+      height: 150px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!--  1. 使用 .stop 阻止冒泡 -->
+    <!-- <div class="inner" @click="div1Handle">
+      <input type="button" value="戳他" @click.stop="btnHandle">
+    </div> -->
+
+    <!-- 2. 使用 .prevent 阻止了默认行为 -->
+    <a href="http://www.baidu.com">有问题，先去百度</a>
+
+
+  </div>
+
+  <!-- 1. 第一件事就是引入那个Vue.js  script 的文件 -->
+  <!-- 1. 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    // 创建Vue实例 
+    var vm = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+        div1Handle() {
+          console.log('这是触发了 inner div 的点击事件');
+        },
+        btnHandle() {
+          console.log('这是触发了 btn 按钮的点击事件');
+        }
+      }
+
+
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* [v-cloak] {
+      display: none;
+    } */
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- 使用 v-cloak 能够解决 插值表达式闪烁的问题 -->
+    <p>{{ msg }}</p>
+    <div v-html="msg2">111</div>
+    <!-- v-bind: 提供用于绑定属性的指令 -->
+    <input type="button" value="按钮" v-bind:title="mytitle + '123'" id="btn" v-on:click="show">
+    <input type="button" value="按钮" v-on:mouseover="show">
+  </div>
+  
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        msg: "123",
+        msg2: "<h2>我</h2>",
+        mytitle: "这是一个自己定义的title"
+      },
+      methods: {
+        show: function() {
+          alert('hello');
+        }
+      }
+    })
+
+    /*
+      5. v-bind 是属性绑定机制 缩写是  :
+      6. v-on   是事件绑定机制 缩写是 @
+    */
+    // 但是Vue不提倡那个操作dom元素
+    // document.getElementById('btn').onclick = function() {
+    //   alert("hello");
+    // }
+  </script>
+
+</body>
+</html>

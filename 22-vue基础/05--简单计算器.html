@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    0. 总结是必不可少的工作
+    1. 双向数据的绑定
+    2. select选择框的使用
+    3. codeStr的使用
+    4. 计算器使用的几个数据
+   -->
+  <div id="app">
+    <input type="text" v-model="n1">
+
+    <select v-model="opt">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+
+    <input type="text" v-model="n2">
+
+    <input type="button" value="=" @click="calc">
+
+    <input type="text" v-model="result">
+    <!-- <input type="button" v-model="result"> -->
+
+  </div>
+
+  <!-- 1. 先引入再讲Vue.js -->
+  <!-- 1. 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        n1: 0,
+        n2: 0,
+        result: 0,
+        opt: '+'
+      },
+      methods: {
+        calc () {
+          // 字符串的拼接效果
+          var codeStr = 'parseInt(this.n1)' + this.opt + 'parseInt(this.n2)'
+          this.result = eval(codeStr);
+
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>

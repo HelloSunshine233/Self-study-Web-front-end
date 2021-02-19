@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .pink {
+      color: pink;
+    }
+
+    .thin {
+      font-weight: 200;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+
+    .active {
+      letter-spacing: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- <h1 :class="">这是一个很大的h1标签</h1> -->
+    <!-- 1. 前三种方式都是在数组中使用的 -->
+
+    <!-- 1. 直接传递一个数组 -->
+    <h1 :class="['thin','italic']" >这是一个很大的h1标签</h1>
+
+    <!-- 2. 数组中使用三元表达式 -->
+    <h1 :class="['thin','italic',flag?'active':'']" >这是一个很大的h1标签</h1>
+
+    <!-- 3. 数组中使用对象来代替三元表达式 ，提高代码的可读性 -->
+    <!-- 对象里面的第一个带不带引号，好像没有什么关系哈 -->
+    <h1 :class="['thin','italic',{active:flag}]" >这是一个很大的h1标签</h1>
+    <!-- <h1 :class="['thin','italic',{pink:flag}]" >这是一个很大的h1标签</h1>
+    <h1 :class="['thin','italic',{'pink':flag}]" >这是一个很大的h1标签</h1> -->
+
+
+    <h1 :class="classObj" >这是一个很大的h1标签</h1>
+
+    
+  </div>
+  <!-- 1. 先引入那个Vue.js 样式 -->
+  <!-- 1. 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        flag: true,
+        // 这是一个对象的赋值
+        classObj: { pink: true, thin: true, italic: false, active: false }
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+</html>
