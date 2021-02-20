@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    1. key保证了这里面数据的唯一性
+    2. 让我们data和页面上的数据，让他们强制关联起来
+    3. 不使用key的话，就会使得那个v-for在渲染数据
+    4. 在一些特殊的情况，如果v-for 有问题，
+    必须在使用v-for的同时，指定唯一的字符串/数字类型  :key 值
+   -->
+
+   <!-- 
+     二 存在的问题
+     1. 自己在前面写的时候忘记那个前面的text框中的绑定事件 v-bind: 就相当于  :
+     2. 自己应该把整体的需求，一步步怎么执行的都分解好，一步一步的完成，而不是走一步看一步
+     3. label 是什么意思呢
+     4. v-model什么意思  
+   -->
+
+   <!--
+     三 整体的step
+     1. 先搭建vue平台
+     2. 模仿HTML搭建好 
+     3. 想想那个涉及到的v-bind:   v-for  v-model什么意思 
+     4. @click 点击事件 
+   -->
+  <div class="app">
+    <div>
+      id:
+      <input type="text" v-model="id">
+      name:
+      <input type="text" v-model="name">
+
+      <input type="button" value="添加" @click="add">
+    </div>
+
+    <!-- 注意： v-for 循环的时候，key 属性只能使用 number获取string -->
+    <!-- 注意： key 在使用的时候，必须使用 v-bind 属性绑定的形式，指定 key 的值 -->
+    <!-- 在组件中，使用v-for循环的时候，或者在一些特殊情况中，如果 v-for 有问题，
+      必须 在使用 v-for 的同时，指定 唯一的 字符串/数字 类型 :key 值 -->
+      <p v-for="item in list" :key="item.id">
+        <!-- 这里的复选框 不会写了 -->
+        <input type="checkbox">
+        {{ item.id }}---{{ item.name }}
+      </p>
+  </div>
+
+  <!-- 1. 首先引入那个vue.js  -->
+  <!-- 1. 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    var app = new Vue({
+      el: '.app',
+      data: {
+        // 现在写的是 对象数组
+        list: [
+          { id: 1, name: '李思'},
+          { id: 2, name: '孟子'},
+          { id: 3, name: '孔子'},
+          { id: 4, name: '老子'},
+          { id: 5, name: '荀子'},
+        ]
+      },
+      methods: {
+        add() {
+          // 这里添加的对象是     对象 用{}
+          this.list.unshift({ id: this.id, name: this.name});
+        }
+
+
+      }
+    })
+  </script>
+</body>
+</html>

@@ -7,6 +7,48 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <div id="app">
+    <!-- 1. v-for 可以用在普通数组，对象数组，对象，还有数字 -->
+
+    <!-- 1.数字 -->
+    <!-- <div v-for="item in 10">{{ item }}</div> -->
+
+    <!-- 2. 循环普通数组 -->
+    <!-- 这是错误的想法 -->
+    <!-- <div v-for="(item, index) in list">{{ 值是item，索引是：index }}</div> -->
+    <div v-for="(item, index) in list">值是:--{{ item }}---索引是：{{ index }}</div>
+
+    <!-- 3. 循环对象数组 -->
+    <div v-for="(item,index) in list1">id是：{{ item.id }}---名字是：{{ item.name }}---索引是：{{index}}</div>
+
+    <!-- 4. 循环对象 -->
+    <!-- (val, key, i)  -->
+    <div v-for="(val, key, i) in user">值是： {{ val }} --- 键是： {{key}} -- 索引： {{i}}</div>
+  </div>
+  <!-- 1. 先引入那个vue.js 再讲 -->
+  <!-- 1. 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        list: [1, 3, 5, 6, 8],
+        list1: [
+          { id: 1, name: 'zs1' },
+          { id: 2, name: 'zs2' },
+          { id: 3, name: 'zs3' },
+          { id: 4, name: 'zs4' }
+        ],
+        user: {
+          id: 1,
+          name: '徐德财',
+          gender: '男'
+        }
+      },
+      methods: {
+
+      }
+    })
+  </script>
 </body>
 </html>
