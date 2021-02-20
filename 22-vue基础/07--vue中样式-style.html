@@ -7,6 +7,34 @@
   <title>Document</title>
 </head>
 <body>
+  <div id="app">
+    <!-- 一 使用内联样式 -->
+    <!-- 1. 直接在元素上通过 :style  的样式，书写样式 （对象） -->
+    <!-- 2. 将样式对象，顶一顶到data 数据中，并直接引用到:style 中 -->
+    <!-- 3. 在:style 中通过数组，通过多个data 上的样式对象 -->
+
+    <!-- 这里是对象的形式，所以后面应该加上{  } -->
+    <h1 :style="{color: 'red'}">这是一个很大的h1</h1>
+    <h1 :style="styleObj1">这是一个很大的h1</h1>
+    <h1 :style=[styleObj1,styleObj2]>这是一个很大的h1</h1>
+  </div>
+
   
+  <!-- 1. 先引入vue.js -->
+  <!-- 1. 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        // 前面的那个样式可以不加引号
+        styleObj1: {color: 'pink', 'font-weight': 200},
+        styleObj2: {'font-style': 'italic'}
+      },
+      methods: {
+
+      }
+    })
+  </script>
 </body>
 </html>
