@@ -6,16 +6,31 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- 
+    1. 类抽象了对象的公共部分，它泛指某一大类 （汽车设计图纸）类
+    2. 对象特指某一个，通过类实例化一个具体的对象 一辆宝马车（对象的实例）
+
+    面向对象的特点是：
+      1. 抽象对象的公共属性和行为组织（封装）成一个类（模板）
+      2. 对类进行实例化，目的是     获取类的对象
+      3. 好像的意思就像是造汽车一样
+   -->
     <script>
-        // 1. 创建一个class  创建一个明星类
+        // 1. 创建一个class  创建一个明星类 
         class Star {
+          // constructor() 方法是类的构造函数（默认方法），用于传递参数，返回实例对象，
+          // 通过new命令生成对象实例的时候就会自动调用该方法。如果没有显示定义，类内部会自动给我们创建一个constructor()
+          // 1. 构造函数不需要加function
             constructor(uname, age) {
+              // 这就是接受参数，传参的过程
                 this.uname = uname;
                 this.age = age;
             }
         }
 
         // 2. 利用类创建对象 new
+        // 实例化对象的过程
+        // 通过new命令生成对象实例的时候就会自动调用该constructor()方法。
         var ldh = new Star('刘德华', 17);
         console.log(ldh);
     </script>

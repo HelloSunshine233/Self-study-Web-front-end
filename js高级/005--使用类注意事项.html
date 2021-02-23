@@ -6,23 +6,49 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- 
+    1. 先有类才能实例化
+    2. 类里面的共有的属性和方法一定要加this使用
+    3. constructor() 里面的this指向了实例对象，方法里面的this指向
+    这个方法的调用者
+   -->
+    <button>点击</button>
+
     <script>
+        var that;
+        var _that;
         class Star {
             constructor(uname, age) {
+                // constructor 中的this 指向的是 创建的实例对象
+                that = this;
+                // console.log(this);
                 this.uname = uname;
                 this.age = age;
+
                 // 这句话的意思好像是先把方法写到预加载的上面去
-                this.sing();
+                // this.sing();
+
                 this.btn = document.querySelector('button');
-                this.btn.click = this.sing();
+                // sing 不要加（）否则就会那个直接调用了。
+                this.btn.onclick = this.sing;
             }
             sing() {
                 // 类里面的共有的属性和方法一定要加this使用
-                console.log(this.age);
+                // 这个sing方法里面的this 指向的是 btn 这个按钮,因为这个按钮调用了这个函数
+                console.log(this);
+                console.log(that.uname);
             }
-        }
-        // 此时的传参就传了一个uname
-        var ldh = new Star('刘德华');
+            dance() {
+                // 这个dance() 方法中的this 指向的是实例对象 ldh 因为ldh 调用了这个函数
+                _that = this;
+                // console.log(this);
+            }
+      }
+      // 此时的传参就传了一个uname
+      var ldh = new Star('刘德华');
+      console.log(that === ldh);
+      ldh.dance();
+      console.log(_that === ldh);
     </script>
 </body>
 </html>
