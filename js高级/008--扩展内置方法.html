@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展内置方法</title>
+
+</head>
+<body>
+    <script>
+        Array.prototype.sum = function() {
+            // var sum 这个必须赋值，要不就会产生问题
+            var sum = 0;
+            for (var i = 0; i < this.length; i++) {
+                sum += this[i];
+            }
+            return sum;
+        }
+        // 可以传参也可以不用穿参
+        // 方法一
+        var arr = new Array(11, 22, 33);
+        console.log(arr.sum());
+        // 方法二 数组，不是对象
+        var arr1 = [1, 2, 4];
+        console.log(arr1.sum());
+</script>
+</body>
+</html>

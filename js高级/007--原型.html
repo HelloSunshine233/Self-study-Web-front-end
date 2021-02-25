@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型</title>
+
+</head>
+<body>
+    <script>
+        // 整了半天还是不会写
+        // 构造函数的方式
+       function Star(uname, age) {    
+            this.uname = uname;
+            this.age = age;
+       }
+       Star.prototype = {
+           constructor: Star, // 手动设置指回原来的构造函数
+            sing: function() {
+                console.log('我会唱歌');
+            },
+            movie: function() {
+                console.log('演电影');
+            }
+       }
+       var ldh = new Star('刘德华', 18);
+       ldh.sing();
+       ldh.movie();
+       console.log(ldh.__proto__);
+       console.log(ldh.__proto__.constructor);
+    </script>
+</body>
+</html>

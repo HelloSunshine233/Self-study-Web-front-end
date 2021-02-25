@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静态成员和实例成员</title>
+</head>
+<body>
+    <!-- 
+        1. 实例成员就是构造函数内部通过this添加的成员， uname age sing 就是实例成员
+        2. 实例成员只能通过实例化的对象来访问
+
+
+     -->
+    <script>
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            // 看看这就是光看自己什么都不会写
+            // this.sing = function() {
+            //     console.log('我会唱歌！');
+            // }
+        }
+
+        // 一般情况下，我们公共的属性定义到构造函数里面，公共的方法我们放到原型对象身上
+        Star.prototype.sing = function() {
+                console.log('我会唱歌！');                
+        }
+
+        // 传参
+        var ldh = new Star('刘德华', 18);
+        // 1. 实例成员就是构造函数内部通过this添加的成员， uname age sing 就是实例成员
+        // 2. 实例成员只能通过实例化的对象来访问
+        // console.log(ldh.uname);
+        ldh.sing();
+        // console.log('---------------------');
+        // 2. 静态成员
+        // Star.sex = '男';
+        // 静态成员只能通过构造函数来访问
+        // console.log(Star.sex);
+
+
+    </script>
+</body>
+</html>
