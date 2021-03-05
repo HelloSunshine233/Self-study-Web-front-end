@@ -1,0 +1,138 @@
+/*清除元素默认的内外边距  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /*让所有斜体 不倾斜*/
+  em,
+  i {
+    font-style: normal;
+  }
+  /*去掉列表前面的小点*/
+  li {
+    list-style: none;
+  }
+  /*图片没有边框   去掉图片底侧的空白缝隙*/
+  img {
+    border: 0; /*ie6*/
+    vertical-align: middle;
+  }
+  /*让button 按钮 变成小手*/
+  button {
+    cursor: pointer;
+  }
+  /*取消链接的下划线*/
+  a {
+    color: #666;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #e33333;
+  }
+
+ h4 {
+    font-weight: 400;
+  }
+
+  /* 背景的设置 */
+body {
+    /* 一起连写的话，就要在后面进行 0 0 。写上位置 */
+    background: url(../images/bg.jpg) no-repeat 0 0 / cover;
+    /* 根据浏览器的自适应宽度 */
+    /* background-size: cover; */
+}
+
+/* 这个设置之后，就不会出现那个缩放导致的一些小问题了 */
+/* // 实现rem适配 */
+@media screen and (max-width: 1024px) {
+    html {
+      font-size: 42.66px !important;
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    html {
+      font-size: 80px !important;
+    }
+  }
+
+.viewport {
+    /* 将对象作为弹性伸缩盒显示 */
+    display: flex; 
+    /* 其中的cover（铺满，超出就会补全）  和
+     contain（现在的给看全） 不知道是什么意思 */
+    min-width: 1024px;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 1.1rem .25rem 0;
+    background: url(../images/logo.png) no-repeat 0 0 / contain;
+    min-height: 780px;
+}
+.viewport .column {
+    flex: 3;
+    /* background-color: pink; */
+}
+.viewport .column:nth-child(2) {
+    flex: 4;
+}
+/* 公共面板样式 */
+.panel {
+    position: relative;
+    /* 里面要是没有那个设置文字等内容的时候，就会好像出来一条线 */
+    /* transparent 万一图片加载不出来的情况下就那个好看点，透明色 */
+    border: 15px solid transparent;
+    /* 好像就是边框变得不一样，有点像是四周的墙一样 */
+    /* 给了边框的宽度就不要给图片的宽度了，默认的就和边框的宽度一样 */
+    border-width: .6375rem .475rem .25rem 1.65rem;
+    border-image-source: url(../images/border.png);
+    /* 1. 九宫格的切法，上右下左 */
+    border-image-slice: 51 38 20 132;
+    /* 每个这个盒子的下面的边距 */
+    margin-bottom: .25rem;
+}
+.inner {
+    /* 子绝父相 */
+    position: absolute;
+    top: -.6375rem;
+    left: -1.65rem;
+    right: -0.475rem;
+    bottom: -0.25rem;
+    /* 再把文字给挤下去就行了 */
+    padding: .3rem .45rem;
+    /* background-color: rgb(0, 255, 179); */
+}
+/* 利用类名来调用字体图标 */
+/* 
+    1. 我自己的理解就是，先复制两个文件，一个style.css的字体css文件，还有
+    一个fonts文件，
+    2. HTML页面引入字体图标中的css文件
+    3. 标签直接调用图标对应的类名即可
+    0. 首先还是要自己先去下载那个字体图标的文件，然后放在所在项目的文件夹下面，
+    然后那个style.css的字体css文件，放在fonts文件中
+*/
+/* 概览区域模块制作 */
+.overview {
+    height: 1.375rem;
+}
+/* 忘记了这几个小li 还是要flex布局。父亲ul还是设置为flex */
+.overview ul {
+    display: flex;
+    /* justify-content 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。 */
+    /* 项目位于各行之间留有空白的容器内。 */
+    justify-content: space-between;
+}
+.overview ul li h4 {
+    /* h4 字体的高度，颜色，还有上下左右边距 */
+    font-size: .35rem;
+    color: #fff;
+    padding: 0 0 .1rem .06rem;
+}
+.overview ul li span {
+    font-size: 0.2rem;
+    color:#4c9bfd;
+}
+
+
+
