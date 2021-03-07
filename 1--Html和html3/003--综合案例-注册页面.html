@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合案例-注册页面</title>
+</head>
+
+<body>
+    <h4>青春不常在，赶紧谈恋爱</h4>
+    <table width="500">
+        <!-- 第一行 -->
+        <tr>
+            <td>性别：</td>
+            <td>
+                <!-- 这里的label 是for，前面的input 是id -->
+                <input type="radio" name="sex" id="nan"> <label for="nan"><img src="images/man.jpg"> 男 </label>
+                <input type="radio" name="sex" id="women"> <label for="women"><img src="images/women.jpg"> 女 </label>
+            </td>
+        </tr>
+        <!-- 第二行 -->
+        <tr>
+            <td>生日:</td>
+            <td>
+                <select>
+                    <option>--请选择年份--</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                </select>
+                <select>
+                    <option>--请选择月份--</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <select>
+                    <option>--请选择日期--</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                </select>
+            </td>
+        </tr>
+        <!-- 第三行 -->
+        <tr>
+            <td>所在地区：</td>
+            <td>
+                <input type="text" value="北京思密达">
+            </td>
+        </tr>
+        <!-- 第四行 -->
+        <tr>
+            <td>婚姻状况：</td>
+            <td>
+                <!-- 只有设置成相同的名字name属性，才会只选择一个 ，但是那个id不能够重复-->
+                <input type="radio" name="marriage" id="marriage"><label for="marriage"> 未婚 </label>
+                <input type="radio" name="marriage" id="marriage1"><label for="marriage1"> 已婚 </label>
+                <input type="radio" name="marriage" id="marriage2"><label for="marriage2"> 离婚 </label>
+            </td>
+        </tr>
+        <!-- 第五行 -->
+        <tr>
+            <td>学历：</td>
+            <td>
+                <input type="text" value="幼儿园">
+            </td>
+        </tr>
+        <!-- 第六行 -->
+        <tr>
+            <td>喜欢的类型：</td>
+            <td>
+                <!-- 写错了，应该用多选框 checKbox -->
+                <!-- 还是想错了。是input中的type中的Checkbox -->
+                <!-- <select>
+                    <option>妩媚的</option>
+                    <option>可爱的</option>
+                    <option>小鲜肉</option>
+                    <option>老腊肉</option>
+                    <option>都喜欢</option>
+                </select> -->
+                <!-- <checkbox>妩媚的</checkbox>
+                <checkbox>妩媚的</checkbox>
+                <checkbox>妩媚的</checkbox>
+                <checkbox>妩媚的</checkbox>
+                <checkbox>妩媚的</checkbox> -->
+                <!-- 这里没有定义名字，应该定义name的 -->
+
+                <input type="checkbox" name="love">妩媚的
+                <input type="checkbox" name="love" checked="checked">可爱的
+                <input type="checkbox" name="love">妩媚的
+                <input type="checkbox" name="love">妩媚的
+            </td>
+        </tr>
+        <!-- 第七行 -->
+        <tr>
+            <td>自我介绍：</td>
+            <!-- 这个地方关于填写的东西的宽度问题和长度不会写了 -->
+            <td>
+                <textarea value="自我介绍" cols="40"></textarea>
+            </td>
+        </tr>
+        <!-- 第八行 -->
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" value="免费注册">
+            </td>
+        </tr>
+        <!-- 第九行 -->
+        <tr>
+            <td></td>
+            <td>
+                <input type="checkbox" checked="checked">我同意注册条款
+                <!-- <input type="radio" checked="checked">我同意注册条款 -->
+            </td>
+        </tr>
+        <!-- 第十行 -->
+        <tr>
+            <td></td>
+            <td>
+                <!-- 这个地方还有需要加强的地方，不要调到首页的上面进行显示 -->
+                <a href="#">我是会员，立即登录</a>
+            </td>
+        </tr>
+        <!-- 第九行 -->
+        <tr>
+            <td></td>
+            <td>
+                <h5>我承诺</h5>
+                <!-- 无序列表 -->
+                <ul>
+                    <li>年满18岁</li>
+                    <li>严禁的态度</li>
+                    <li>真诚的寻找另一半</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
