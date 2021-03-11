@@ -36,14 +36,24 @@
         设置元素获得焦点时的样式 */
         /* 
             （1）:link  未访问过的链接的设置    (没点击的时候是黑色的)
-            （2）:active 鼠标按下还没有谈起的时候的设置  ()
-            （3）:visited 点击之后的链接的设置    （点了之后变黄色）
+            （2）:visited 点击之后的链接的设置    （点了之后变黄色）
+            （3）:hover
+            （4）:active 鼠标按下还没有谈起的时候的设置    
         */
         /* 必须按照顺序来书写  :link :visited :hover :active */
         /* 记忆的口诀是 love hate 或者是 lv 包包  好 */
         
         .nav a:hover {
             color: pink;
+        }
+        /* 伪类选择器之:focus */
+        /* 这个就是获得焦点的表单元素 */
+        /* 简单点的意思就是谁有光标，我就把谁选出来 */
+        /* 一般的情况下，就是<input> 类元素才能获取，因此这个选择器针对于表单元素 */
+        
+        input:focus {
+            /* 真是神奇的效果 */
+            background-color: yellow;
         }
     </style>
 </head>
@@ -52,6 +62,7 @@
     <div class="nav">
         <a href="#">我是儿子</a>
         <p>
+            <input type="text">你好少年<br>
             <a href="#">我是孙子</a>
         </p>
     </div>

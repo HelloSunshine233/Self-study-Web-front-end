@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS的元素显示模式转换</title>
+    <style>
+        /* display: inline;转换为行内元素 
+        display:inline-block 转换为行内块元素 
+        display: block 转换为块级元素 */
+        
+        a {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-decoration: none;
+            color: #333;
+            background-color: pink;
+            /* <!-- 把 a 转换为块级元素 --> */
+            display: block;
+            /* 为什么这个地方不是那个转换为行内块元素呢 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1. 在特殊的情况下，一种模式的元素需要另一种模式的特性
+        2. 比如我们想要那个增加a链接的出发范围
+     -->
+
+    <!-- 把  a   转换为块级元素 -->
+    <a href="#">你好丶少年</a>
+</body>
+
+</html>
