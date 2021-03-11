@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    /* 列表样式，你把list-style:none去掉，你会发现li前面会有黑色的实心圆（默认的）
+    。list-style也可以设置空心圆、方块、自定义链接图片等 */
+    list-style: square;
+}

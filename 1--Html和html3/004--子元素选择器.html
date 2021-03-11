@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子元素选择器</title>
+    <style>
+        /* 
+            1. 复合选择器分为
+            子选择器：亲儿子选择器
+            后代选择器：（包含选择器）可以选择父元素里面的所有的子元素，还可以嵌套使用
+            并集选择器：可以选择多组标签，同时为他们定义相同的样式，通常用于集体声明
+            伪类选择器: 用于向某些选择器添加特殊的效果，比如给链接添加特殊的效果，或者选择第一个，第N个元素
+         */
+        /*
+            1. 子代选择器意思就是    >     我擦，忘得干净的
+            2. 元素二必须是亲儿子，孙子等都不归他管，你也可以叫他亲儿子选择器
+        */
+        /* 1. 子代选择器 */
+        /* .nav>a {
+            color: pink;
+        } */
+        /* 2.并集选择器 */
+        
+        a,
+        p {
+            color: rgb(214, 26, 105);
+        }
+        /* 3. 伪类选择器 */
+        /* 书写的最大的特点就是加冒号（:）显示，比如:hover :first-child */
+        /* 好像的意思就是加一些特效，Duang */
+        /* 设置鼠标悬停在元素上时的样式
+        为已访问和未访问链接设置不同的样式
+        设置元素获得焦点时的样式 */
+        /* 
+            （1）:link  未访问过的链接的设置    (没点击的时候是黑色的)
+            （2）:active 鼠标按下还没有谈起的时候的设置  ()
+            （3）:visited 点击之后的链接的设置    （点了之后变黄色）
+        */
+        /* 必须按照顺序来书写  :link :visited :hover :active */
+        /* 记忆的口诀是 love hate 或者是 lv 包包  好 */
+        
+        .nav a:hover {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="#">我是儿子</a>
+        <p>
+            <a href="#">我是孙子</a>
+        </p>
+    </div>
+</body>
+
+</html>
