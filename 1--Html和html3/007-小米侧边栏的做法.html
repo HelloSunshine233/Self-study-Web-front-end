@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米侧边栏的做法</title>
+    <style>
+        a {
+            /* 怎么写css的顺序的问题现在还是有点问题 */
+            display: block;
+            width: 230px;
+            height: 40px;
+            /* 
+                length	定义固定的缩进。默认值：0。
+                %	定义基于父元素宽度的百分比的缩进。
+                inherit	规定应该从父元素继承 text-indent 属性的值。 
+            */
+            text-indent: 2em;
+            /* 忘记了那个字体的大小 */
+            font-size: 14px;
+            line-height: 40px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #55585a;
+        }
+        
+        a:hover {
+            background-color: #ff6700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1. 首先先分析好思路再去做
+        （1）链接需要竖着去显示（display: block）
+        （2）链接可以点击的区域很大（label）?   label标签是不是？
+     -->
+    <div>
+        <!-- 一起的写的方法就是Ctrl + shift  + 鼠标左键 -->
+        <!-- 1. 自己label的写法又忘记了 -->
+
+
+        <a href="http:www.baidu.com">手机 电话卡</a>
+        <a href="#">手机 电话卡</a>
+        <a href="#">手机 电话卡</a>
+        <a href="#">手机 电话卡</a>
+        <a href="#">手机 电话卡</a>
+        <a href="#">手机 电话卡</a>
+        <a href="#">手机 电话卡</a>
+    </div>
+</body>
+
+</html>

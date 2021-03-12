@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>label标签的学习</title>
+</head>
+
+<body>
+    <!-- 第四行 -->
+    <tr>
+        <td>婚姻状况：</td>
+        <td>
+            <!-- 只有设置成相同的名字name属性，才会只选择一个 ，但是那个id不能够重复-->
+            <input type="radio" name="marriage" id="marriage"><label for="marriage"> 未婚 </label>
+            <input type="radio" name="marriage" id="marriage1"><label for="marriage1"> 已婚 </label>
+            <input type="radio" name="marriage" id="marriage2"><label for="marriage2"> 离婚 </label>
+        </td>
+    </tr>
+    <br>
+    <tr>
+        <td>喜欢的类型：</td>
+        <td>
+            <input type="radio" name="marriage" id="m"><label class="marriage" for="m">
+               可爱的 
+            </label>
+
+            <input type="radio" name="marriage" id="m1"><label class="marriage" for="m1">
+                贤惠的 
+             </label>
+            <input type="radio" name="marriage" id="m2"><label class="marriage" for="m2">
+                温柔的 
+             </label>
+        </td>
+    </tr>
+</body>
+
+</html>
