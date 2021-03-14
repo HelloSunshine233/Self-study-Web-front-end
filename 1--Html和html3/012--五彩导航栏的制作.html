@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五彩导航栏的制作</title>
+    <style>
+        .nav a {
+            display: inline-block;
+            width: 120px;
+            height: 58px;
+            background-color: pink;
+            font-size: 16px;
+            color: #fff;
+            line-height: 48px;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .nav .bg1 {
+            background: url(images/bg1.png) no-repeat;
+        }
+        
+        .nav .bg1:hover {
+            background-image: url(images/bg11.png);
+        }
+        
+        .nav .bg2 {
+            background: url(images/bg2.png) no-repeat;
+        }
+        
+        .nav .bg2:hover {
+            background-image: url(images/bg22.png);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1. 链接属于行内元素，所以应该转换为块级元素，才能拥有宽和高
+        2. 里面的文字需要设置水平和垂直方向上的居中显示
+        3. 链接里面需要背景颜色的变化，所以需要相关的背景属性
+        背景属性可以设置为: 
+        背景颜色 背景图片，背景平铺， 背景图片位置 背景图像固定
+        4. 鼠标经过会产生相应的变化，所以应该需要使用到链接伪类选择器
+
+        
+        /* 必须按照顺序来书写  :link :visited :hover :active */
+        /* 记忆的口诀是 love hate 或者是 lv 包包  好 */
+        （1）:link  未访问过的链接的设置    (没点击的时候是黑色的)
+        （2）:visited 点击之后的链接的设置    （点了之后变黄色）
+        （3）:hover
+        （4）:active 鼠标按下还没有谈起的时候的设置  
+     -->
+    <div class="nav">
+        <a href="#" class="bg1">五彩导航</a>
+        <a href="#" class="bg2">五彩导航</a>
+        <a href="#">五彩导航</a>
+        <a href="#">五彩导航</a>
+    </div>
+</body>
+
+</html>

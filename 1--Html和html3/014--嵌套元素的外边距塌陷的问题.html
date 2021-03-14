@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 解决的方案是：
+        1：可以给父元素定义一个  上边框
+        2：可以为父元素定义     上内边距
+        3：可以为父元素添加一个   overflow:hidden --> */
+        
+        .nav {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* 1：可以给父元素定义一个  上边框 */
+            /* border-top: 1px solid transparent; */
+            /* 2：可以为父元素定义 上内边距 */
+            /* padding-top: 1px; */
+            /* 3：可以为父元素添加一个 overflow: hidden --> */
+            overflow: hidden;
+        }
+        
+        .son {
+            width: 50px;
+            height: 50px;
+            background-color: aqua;
+            margin-top: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 3. 外边距和并会出现的问题是：
+    （1）相邻块元素垂直外边距的合并（就是你下面100px,我上边距200px,按理说应该是300px
+    但是现在就是只有200px,这就是所说的那个合并的现象）
+    解决的方案就是：只给一个盒子添加那个margin的值
+
+    （2）嵌套块元素垂直外边距的塌陷（子元素在父元素里面，给子元素一个margin上面的值，
+    父元素会和子元素一起下来的问题，就叫做嵌套块元素的垂直外边距的塌陷的问题）
+    解决的方案是：
+    1：可以给父元素定义一个  上边框
+    2：可以为父元素定义     上内边距
+    3：可以为父元素添加一个   overflow:hidden -->
+
+    <!-- 
+        4. 清除内外边距的问题
+        （1）行内元素尽量只设置左右的内外边距（意思就是你写了也没有用，只会显示左右的）
+     -->
+    <div class="nav">
+        <div class="son">
+        </div>
+</body>
+
+</html>

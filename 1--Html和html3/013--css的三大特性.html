@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /* margin: 0 auto; */
+            /* (4) 行内元素  或者是行内块元素的居中显示 ，
+            需要给其父元素添加一个 text-align:center就行了 */
+            text-align: center;
+        }
+        
+        span {
+            /* 这里我是不是可以理解为，继承了父亲的属性的问题呢 */
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1. css 三个重要的特性： 层叠性 继承性 优先级
+        （2）继承性： 子元素可以继承父元素的样式（text-- font- line-这样的样式，以及color属性）
+        （3）优先级的问题：
+        继承   或者   *    0000
+        元素选择器         0001
+        类选择器 和 伪类选择器 0010
+        ID选择器           0100
+        行内样式 style=""  1000
+        !important     无穷大
+
+     -->
+    <!-- 
+         2. 盒子模型：浮动 定位== 
+         （1）border-collapse:collapse;表示相邻的边框合并在一起
+         （2）padding 不会影响盒子的大小的情况（就是不要给宽度）
+         （3）外边距块级盒子水平居中    先指定了宽度（width  和 盒子的左右边距都设置为auto）
+          (4) 行内元素  或者是行内块元素的居中显示 ，需要给其父元素添加一个 text-align:center就行了
+
+        3. 外边距和并会出现的问题是：
+            （1）相邻块元素垂直外边距的合并（就是你下面100px,我上边距200px,按理说应该是300px
+            但是现在就是只有200px,这就是所说的那个合并的现象）
+            解决的方案就是：只给一个盒子添加那个margin的值
+
+            （2）嵌套块元素垂直外边距的塌陷（子元素在父元素里面，给子元素一个margin上面的值，
+            父元素会和子元素一起下来的问题，就叫做嵌套块元素的垂直外边距的塌陷的问题）
+            解决的方案是：
+            1：可以给父元素定义一个  上边框
+            2：可以为父元素定义     上内边距
+            3：可以为父元素添加一个   overflow:hidden
+
+      -->
+    <div>
+        <span>nihao</span>
+    </div>
+</body>
+
+</html>
