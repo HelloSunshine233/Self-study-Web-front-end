@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通配符解决页面刚开始页面边距的问题</title>
+    <!-- 就是继承的原因吗 -->
+    <style>
+        /* 1 这个真的会产生很多的问题呢，
+        比如这个例子就是那个会影响到h4的上下边距的问题，为什么呢 */
+        /* // h4的margin值
+        Google Chrome 27.0 --------- h4的margin为: margin:22px 0 21px 0; */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+        }
+        
+        div {
+            width: 500px;
+            height: 500px;
+            background-color: #fff;
+        }
+        
+        div p {
+            background-color: pink;
+        }
+        
+        div h4 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>Redmi AirDots真无线蓝...</p>
+        <h4>Redmi AirDots真无线蓝...</h4>
+    </div>
+</body>
+
+</html>

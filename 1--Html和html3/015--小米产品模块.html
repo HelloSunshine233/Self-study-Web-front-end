@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米的产品模块</title>
+    <style>
+        /* 6 通配符选择器 */
+        /* 这个如果不写的话，就会产生不知道的效果 */
+        /* margin=0 padding=0的意思就是，结构要比较紧凑，周围不要有空白。 */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .nav {
+            width: 296px;
+            height: 415px;
+            /* background-color: pink; */
+            background-color: #fff;
+            /* margin: 0 auto; */
+            border: 1px solid #ccc;
+        }
+        /* <img>、<input>、<textarea>、<select>、<object> */
+        /* 都是替换元素。这些元素往往没有实际的内容，即是一个空元素 */
+        
+        .nav img {
+            /* 4 图片的宽度和父亲一样宽，这样就不会超过父亲的宽度了 */
+            width: 100%;
+        }
+        
+        .review {
+            /* 1 给一个宽度，然后再用那个padding真的会撑开盒子 */
+            /* width: 100%; */
+            /* 2 给一个高度，方便别人评价多的时候，字撑不下 */
+            height: 70px;
+            font-size: 14px;
+            padding: 0 28px;
+            /* 3 这个段落的上下用margin去做最合适，
+            因为这样就不会因为添加了高度的问题，
+            而用padding来上下的问题影响到那个撑开盒子的问题了 */
+            margin-top: 30px;
+        }
+        
+        .appraise {
+            font-size: 12px;
+            color: #b0b0b0;
+            /* 这种混合式使用的方式还是挺好的，不会因为内容的问题
+            影响到其他方面的事情。而且这里的还是只设置了那个margin-top的问题，
+            不会设计到外边距合并的问题 */
+            margin-top: 20px;
+            padding: 0 28px;
+        }
+        /* 类似的样式一起定义，这样就会节省很多的空间 */
+        
+        .info {
+            font-size: 14px;
+            margin-top: 15px;
+            padding: 0 28px;
+        }
+        
+        .info h4 {
+            display: inline-block;
+            font-weight: 400;
+        }
+        
+        .info span {
+            color: #ff6700;
+        }
+        
+        .info em {
+            font-style: normal;
+            color: #ebe4e0;
+            /* 上  右  下   左 */
+            /* 6 巧妙的地方就是只用了一个margin的值，就会产生三个的效果，
+            而且不用考虑那个外边距合并的效果 */
+            margin: 0 6px 0 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1. 先分析好整体，再去做任务
+     -->
+    <div class="nav">
+        <img src="images/img.jpg" alt="蓝牙耳机">
+        <p class="review">快递牛，整体不错，蓝牙可以说是秒连，红米给力</p>
+        <div class="appraise">来自1589089447的评价</div>
+        <div class="info">
+            <!-- 5 都是盒子，所以盒子之间可以用margin来隔开 -->
+            <h4><a href="#">Redmi AirDots真无线蓝...</a></h4>
+            <!-- 单独做一个测试 -->
+            <!-- <h4>Redmi AirDots真无线蓝...</h4> -->
+
+            <em>|</em> <span> 99.9元</span>
+        </div>
+    </div>
+</body>
+
+</html>

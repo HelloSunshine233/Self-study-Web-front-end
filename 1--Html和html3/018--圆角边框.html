@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圆角边框</title>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: pink;
+        }
+        
+        div {
+            width: 340px;
+            height: 64px;
+            background-color: #fff;
+            /* border-radius: 50px; */
+            margin: 100px auto;
+        }
+        
+        span {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            background-color: #ccc;
+            line-height: 44px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 22px;
+        }
+        
+        span:hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1. 我要做一个类似于网易云音乐中的圆角的边框
+        （1）先做出一个div的盒子，长方形的
+        （2）下载几个那个图标
+        （3）鼠标经过之后会变背景色
+        （4）圆
+        （5）怎么引入那个icon图标的方法总结一下
+        2. 先网站上面下载那个图标，然后在购物车里添加到项目下载。
+        上面有三个选项，从左往右第一个选项是控制类名的、第二个是生成在线代码链接地址的、第三个就是下载至本地的图标代码文件包；
+        先第一个控制类名中的第二个，然后点击第三个本地下载，这时你需要点击第三个选项“下载至本地”，
+        把项目下载到本地电脑并解压，然后将文件中的iconfont.css，引入到你的项目中；
+        准备工作做好后，将需要该图标的地方用<i class="iconfont xxxx"></i>的形式引入即可，其中的类名复制图标下的“复制代码”即可得来！
+     -->
+    <div>
+        <span><i class="iconfont icon-xihuan"></i></span>
+        <span><i class="iconfont icon-tianjia"></i></span>
+        <span><i class="iconfont icon-xiazai"></i></span>
+        <span><i class="iconfont icon-shoucang"></i></span>
+        <span><i class="iconfont icon-fenxiang"></i></span>
+    </div>
+</body>
+
+</html>
