@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        
+        .clearfix {
+            /* IE6,7 专有  这个就是兼容IE 6  7 的一种写法*/
+            *zoom: 1;
+        }
+        
+        .box {
+            /* overflow: hidden; */
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+        }
+        
+        .damao {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        }
+        
+        .ermao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .footer {
+            height: 200px;
+            background-color: black;
+        }
+        
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1 为什么要清除浮动呢？
+        由于父级盒子在很多的情况下，不方便给高度，但是子盒子浮动又不占有位置，最后父级盒子高度
+        为0的时候，，就会影响下面的标准流的盒子
+        （1）父级没高度
+        （2）子盒子浮动了
+        （3）影响下面的布局了，我们就应该清除浮动了
+
+     -->
+    <!-- 
+         2 但是父盒子本身有高度的话，则不需要清除浮动，清除浮动之后，父级盒子就会
+         根据浮动的子盒子自动的检测高度。父级有了高度之后，就不会影响下面的标准流了
+         （这个有点神奇啊）
+         3 清除浮动
+         语法： 选择器{clear: 属性值;}  属性值可以是：left right both
+         重点：原来这里的左右和都   是针对于那个下面的元素来说的
+         在我们的实际的工作中，几乎只用both（both的意思就是 - 左侧或右侧均不允许浮动元素）
+      -->
+
+    <!-- 
+          4 清除浮动的四种方法：
+          （1）额外标签法也称为隔墙法，是W3C推荐的做法
+          （就是在浮动元素末尾添加一个空的标签，例如<div style="clear:both"></div>,或者是其他标签如：<br/>等)
+           在后面添加一个标签，当成一个墙一样，就可以让那个父元素有高度了，不至于掉下来
+           缺点：添加很多的无意义的标签，结构化比较差  
+           
+          （2）父级添加overflow属性 
+          可以设置成 hidden  auto  scroll 
+          记住一个口诀就是（子不教，父之过，给父元素添加代码）
+          缺点：无法显示溢出的部分
+          （3）父级添加after伪元素
+          这个:after 方式是额外标签法的升级版。也是给父元素添加
+            优点：没有增加标签，结构更加的简单
+            缺点：照顾低版本的浏览器
+            代表的网站有：淘宝 百度  网易等
+            .clearfix:after {
+                content: "";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+            .clearfix {
+            /* IE6,7 专有  这个就是兼容IE 6  7 的一种写法*/
+                *zoom: 1;
+            }
+          （4）父级添加双伪元素
+            .clearfix:before,
+            .clearfix:after {
+                content: "";
+                display: table;
+            }
+
+            .clearfix:after {
+                clear: both;
+            }
+
+            .clearfix {
+                *zoom: 1;
+            }
+            代表的网站有：小米 腾讯等
+       -->
+    <div class="box clearfix">
+        <div class="damao">大毛</div>
+        <div class="ermao">二毛</div>
+        <!-- <div class="ermao">二毛</div>
+        <div class="ermao">二毛</div>
+        <div class="ermao">二毛</div> -->
+
+
+        <!-- 1 这个果然是和我想的一样的，因为那个，想在相对于最后的盒子来说，
+            最后徐盒子里面的内容就是必须在下面来显示。因为这个盒子添加的是左右都不能有浮动，就是自己人忍不了-->
+        <!-- <div class="clear">打开方式</div> -->
+
+        <!-- 这个新增的盒子要求必须是块级元素不能是行内元素 -->
+        <!-- <span class="clear"></span> -->
+    </div>
+    <div class="footer"></div>
+</body>
+
+
+</html>

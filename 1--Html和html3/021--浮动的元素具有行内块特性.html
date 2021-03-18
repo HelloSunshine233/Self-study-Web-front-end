@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动的元素会具有行内块的元素的特性</title>
+    <style>
+        /* 浮动的元素会具有行内块的元素的特性 */
+        
+        span {
+            /* 1. 如果不加这个就不会显示出来，因为那个行内元素是不能
+            设置宽和高的，所以不会显示出来 */
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        div {
+            /* float: left; */
+            width: 500px;
+            height: 300px;
+            background-color: aqua;
+        }
+        
+        .a {
+            float: left;
+            /* width: 500px;
+            /* height: 300px; */
+            background-color: rgb(38, 255, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 2. 如果给一个行内元素添加一个浮动的话，就会产生一个
+    行内块元素的特性 -->
+    <!-- 
+        3. 如果行内元素有了浮动之后，
+        就不需要转换为行内块或者是块级元素就可以设置宽和高了
+     -->
+    <span>1</span>
+    <span>2</span>
+    <!-- 4. 如果块级盒子没有设置高度，默认和父级一样宽，
+        但是添加浮动之后，就会根据内容的大小来决定他的大小 -->
+    <div>
+        <div class="a"></div>
+    </div>
+</body>
+
+</html>
