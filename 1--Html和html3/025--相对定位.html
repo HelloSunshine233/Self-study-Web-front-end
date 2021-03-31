@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相对定位</title>
+    <style>
+        /* 3 相对定位relative：
+            （1）相对定位：是元素在移动位置的时候，是相对于它原来的位置来说的（自恋型）
+            （2）原来在标准流之中的位置继续占有，后面的盒子仍然以标准流的方式对待它。（不脱标，继续保留原来的位置）
+                （类似于停职留薪的意思）
+         */
+        /*
+         4 绝对定位是元素在移动位置的时候，是相对于它的祖先元素来说的（拼爹型）
+            （1）如果没有  祖先元素  或者是  祖先元素没有定位     ，则以浏览器为准定位（Document文档）
+            （2）如果祖先元素有定位   （相对、绝对、固定定位）   ，则以最近一级的有定位的元素为参考点移动位置
+            （3）
+          */
+        
+        .father {
+            position: relative;
+            top: 200px;
+            left: 200px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .son {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 20px;
+            height: 20px;
+            background-color: deeppink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

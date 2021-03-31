@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 版心 */
+
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 1 头部制作 */
+
+.header {
+    /* 
+        1 定位
+        2 自身属性
+        3 文本属性
+        4 其他属性（css3的一些属性，鼠标等）
+    */
+    height: 42px;
+    /* background-color: pink; */
+    /* 这里的那个auto是必须要写的，因为那个样式的层叠性 */
+    margin: 30px auto;
+}
+
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+    /* margin-right: 57px; */
+}
+
+.nav {
+    /* 一浮多浮动，所以之前的盒子都要浮动才行 */
+    float: left;
+    /* 都用div盒子了，所以还是用那个margin更加的合适 */
+    margin-left: 60px;
+}
+
+.nav ul li {
+    /* 让导航栏一行显示，给li加浮动，因为li是块级元素，需要在一行显示 */
+    float: left;
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    /* 由于行内元素是没有宽度的，所以转换为块元素就可以显示了 */
+    /* 为什么不可以是行内块元素呢？  应该是都可以的，我感觉*/
+    /* 1 布局定位属性 */
+    display: inline-block;
+    /* 2 自身属性 */
+    height: 42px;
+    /* 直接用padding左右10px就直接可以挤开内容显示了 */
+    padding: 0 10px;
+    /* 3 文本属性 */
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+    /* 4 其他属性 */
+}
+
+.nav ul li a:hover {
+    /* background-color: #7eca9c; */
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+
+/* 搜索模块 */
+
+.search {
+    /* 这个好像不加浮动也是能显示出来的 */
+    float: left;
+    width: 412px;
+    height: 42px;
+    /* background-color: skyblue; */
+    margin-left: 70px;
+}
+
+.search input {
+    /* 
+    （1）布局定位属性（建议display写在第一个，毕竟是关系到模式）
+    display/position/float/clear/visibility/overflow
+    （2）自身属性
+    width/height/margin/padding/border/background
+    （3）文本属性
+    color/font/text-decoration/text-align/vertical-align/white-space/break-word
+    （4）其他属性 
+    content/cursor/border-radius/box-shadow/text-shadow/background:linear-gradient... 
+    */
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    /* 360 - 15 像素 */
+    /* 这样就会撑大盒子，因为我们指定了盒子的宽度了*/
+    padding-left: 15px;
+    color: #bfbfbf;
+    font-size: 14px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    border: 0;
+    background: url(images/btn.png);
+}
+
+
+/* 
+    1 表单，单元格和图片都是属于行内款元素，行内块元素之间是默认的有一个的缝隙的。
+    所以那个尽量的转换为那个块级元素，而不是装换为行内块元素
+    2 但是浮动的两个盒子之间是没有缝隙的
+*/
+
+.user {
+    /* 是最后一个只要有浮动就行了吗，这样就只要调节这个模块距离右边的距离就行了是吧 */
+    float: right;
+    margin-right: 30px;
+    line-height: 42px;
+    color: #666;
+    font-size: 14px;
+}
+
+.banner {
+    height: 421px;
+    background-color: #1c036c;
+}
+
+.banner .w {
+    height: 421px;
+    background: url(images/banner2.png) no-repeat top center;
+}
+
+.subnav {
+    float: left;
+    width: 190px;
+    height: 421px;
+    background: rgba(0, 0, 0, .3);
+}
+
+.subnav ul li {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+}
+
+.subnav ul li a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.subnav ul li a span {
+    float: right;
+}
+
+.subnav ul li a:hover {
+    color: aqua;
+}
+
+.course {
+    /* 1 布局定位属性 */
+    float: right;
+    /* 2 自身属性 */
+    width: 230px;
+    height: 300px;
+    background-color: pink;
+    margin-top: 50px;
+    /* 3 文本属性 */
+    /* 4 其他属性 */
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学成在线首页</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 
+        1 css属性书写的顺序
+            （1）布局定位属性（建议display写在第一个，毕竟是关系到模式）
+            display/position/float/clear/visibility/overflow
+            （2）自身属性
+            width/height/margin/padding/border/background
+            （3）文本属性
+            color/font/text-decoration/text-align/vertical-align/white-space/break-word
+            （4）其他属性 
+            content/cursor/border-radius/box-shadow/text-shadow/background:linear-gradient...
+    -->
+    <!-- 
+         2 页面的整体布局
+            （1）必须确定页面的版心（可视区），我们测量可知
+            （2）分析页面中的行模块，以及每行中的列模块，布局第一准则
+            （3）一行中的列模块经常浮动布局，先确定每个列的大小，之后确定位置，布局第二准则
+            （4）制作HTML结构，我们还是遵循先有结构，后有样式的原则，结构永远是最重要的
+            （5）理清布局结构，再写代码才是尤为重要的。
+    -->
+    <!-- 
+          3  这个地方是li + a 来做的都忘了
+          （1）li + a 语义更加的清晰，有条理的列表型内容
+          （2）如果直接用a，搜索引擎容易辨认为有堆砌关键字的嫌疑，从而影响网站排名
+    -->
+    <!-- 4 页面的整体布局
+        /* 1 布局定位属性 */
+        /* 2 自身属性 */
+        /* 3 文本属性 */
+        /* 4 其他属性 */
+    -->
+</head>
+
+<body>
+    <!-- 1 头部制作 -->
+    <div class="header w">
+        <!-- 全部用盒子还是非常的重要的，至少可以设置宽和高 -->
+        <!-- logo部分 -->
+        <div class="logo">
+            <img src="images/logo.png" alt="logo">
+        </div>
+        <!-- 导航栏部分 nav  -->
+        <!-- 导航栏部分不给宽度的，将来可以继续添加文字 -->
+        <div class="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">课程</a></li>
+                <li><a href="#">职业规划</a></li>
+            </ul>
+        </div>
+        <!-- 搜索部分 -->
+        <!-- 一个盒子里面包含两个表单，input文本框和button按钮 -->
+        <div class="search">
+            <input type="text" value="输入关键词">
+            <!-- 这里面的是一个点击的按钮模块 -->
+            <button></button>
+        </div>
+        <!-- 用户模块 -->
+        <div class="user">
+            <img src="images/user.png" alt="头像"> qq-lilei
+        </div>
+
+    </div>
+    <!-- 头部区域结束了 -->
+    <!-- 2 banner区域开始了 -->
+    <div class="banner">
+        <div class="w">
+            <div class="subnav">
+                <ul>
+                    <li><a href="#">前端开发<span>&gt;</span></a></li>
+                    <li><a href="#">后端开发<span>&gt;</span></a></li>
+                    <li><a href="#">移动开发<span>&gt;</span></a></li>
+                    <li><a href="#">人工智能<span>&gt;</span></a></li>
+                    <li><a href="#">商业预测<span>&gt;</span></a></li>
+                    <li><a href="#">云计算&大数据<span>&gt;</span></a></li>
+                    <li><a href="#">运维&测试<span>&gt;</span></a></li>
+                    <li><a href="#">UI测试<span>&gt;</span></a></li>
+                    <li><a href="#">产品<span>&gt;</span></a></li>
+                </ul>
+            </div>
+
+            <div class="course">
+                <h3>我的课程表</h3>
+                <div class="bd">123</div>
+            </div>
+        </div>
+    </div>
+    <!-- banner区域结束了 -->
+</body>
+
+</html>
