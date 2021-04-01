@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        
+        .app1 {
+            left: 50%;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .app2 {
+            /* 行内元素，这样的直接设置宽度是不能显示出来的 */
+            float: right;
+            /* position: absolute; */
+            top: 400px;
+            left: 600px;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(25, 173, 37);
+        }
+        
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1 行内元素添加绝对或者是固定定位，可以直接设置高度和宽度 -->
+    <!-- 2 块级元素添加绝对或者是固定定位，如果不给宽度和高度，默认大小是内容的大小 -->
+    <span class="app1">123dsfasdfadfasdf</span>
+    <span class="app2">dfasjldkfas送积分卡士大夫卡卡房贷卡束带结发dfasjldkfas送积分卡士大夫卡卡房贷卡束带结发dfasjldkfas送积分卡士大夫卡卡房贷卡束带结发dfasjldkfas送积分卡士大夫卡卡房贷卡束带结发dfasjldkfas送积分卡士大夫卡卡房贷卡束带结发dfasjldkfas送积分卡士大夫卡卡房贷卡束带结发</span>
+    <div>345</div>
+
+</body>
+
+</html>
