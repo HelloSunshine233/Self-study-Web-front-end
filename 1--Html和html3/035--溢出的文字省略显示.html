@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溢出的文字省略号显示</title>
+    <style>
+        div {
+            width: 150px;
+            height: 80px;
+            background-color: pink;
+            margin: 100px auto;
+            /* （1）先强制一行显示文本 */
+            white-space: nowrap;
+            /* （2）超出的部分隐藏 */
+            overflow: hidden;
+            /* （3）文字用省略号代替超出的部分 */
+            text-overflow: ellipsis;
+        }
+        /*  overflow: hidden;
+            text-overflow: ellipsis;
+            /* 弹性伸缩盒子模型显示 */
+        /* display: -webkit-box; */
+        /* 限制在一个块元素显示的文本的行数 */
+        /* -webkit-line-clamp: 3; */
+        /* 设置或检索伸缩盒对象的子元素的排列方式 */
+        /* -webkit-box-orient: vertical; */
+    </style>
+</head>
+
+<body>
+    <!-- 
+    1 单行文本溢出显示省略号--必须满足的三个条件
+    （1）先强制一行显示文本
+    （2）超出的部分隐藏
+    （3）文字用省略号代替超出的部分
+ -->
+    <div>
+        啥也不说了，此处省略一万个字
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片底侧空白缝隙解决方案</title>
+    <style>
+        div {
+            border: 2px solid red;
+        }
+        
+        img {
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1 css的vertical-align属性使用场景：经常用于设置图片或者是表单（行内块元素）和文字垂直对齐
+     -->
+    <!-- 
+         图片底侧空白缝隙解决方案
+         （1） 用那个vertical-align: bottom;
+         （2） 把图片转换为块级元素display:block;  
+      -->
+    <div>
+        <img src="images/img.jpg" alt="">
+    </div>
+</body>
+
+</html>

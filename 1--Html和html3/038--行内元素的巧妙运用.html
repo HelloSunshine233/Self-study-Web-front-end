@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* <!-- （1）布局定位属性（建议display写在第一个，毕竟是关系到模式）
+        display/position/float/clear/visibility/overflow
+        （2）自身属性
+        width/height/margin/padding/border/background
+        （3）文本属性
+        color/font/text-decoration/text-align/vertical-align/white-space/break-word
+        （4）其他属性 
+        content/cursor/border-radius/box-shadow/text-shadow/background:linear-gradient... 
+        --> */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            text-align: center;
+        }
+        
+        .box a {
+            /* （1）布局定位属性 */
+            display: inline-block;
+            /* （2）自身属性 */
+            width: 36px;
+            height: 36px;
+            border: 1px solid #ccc;
+            background-color: #f7f7f7;
+            /* （3）文本属性 */
+            text-align: center;
+            line-height: 36px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            /* （4）其他属性 */
+        }
+        
+        .box .prev,
+        .box .next {
+            width: 85px;
+        }
+        
+        .box .current,
+        .box .dian {
+            border: none;
+            background-color: #fff;
+        }
+        
+        .box input {
+            height: 36px;
+            width: 45px;
+            border: 1px solid #ccc;
+            /* 意思就是点击进去，不显示边框变色 */
+            outline: none;
+        }
+        
+        .box button {
+            width: 60px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="#" class="prev">&lt;&lt;上一页</a>
+        <a href="#" class="current">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#" class="dian">...</a>
+        <a href="#" class="next">下一页&gt;&gt;</a>到第
+        <input type="text">页
+        <button>确定</button>
+</body>
+
+</html>

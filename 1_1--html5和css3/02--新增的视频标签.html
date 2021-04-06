@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频和音频的使用</title>
+    <style>
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1 loop 循环播放的意思 
+        2 controls 向用户展示 播放控件
+        3 autoplay 视频就绪自动播放
+        4 muted 静音播放
+        5 poster 就是播放不出来的时候，加载的图片
+        6 controls="controls" 因为每个浏览器的控件不一样，所以那个尽量先不写，等到最后再去统一写格式
+     -->
+    <video src="media/xiaomi.mp4" autoplay="autoplay" muted="muted" loop="loop" poster="media/XiuXI.jpg"></video>
+</body>
+
+</html>
