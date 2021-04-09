@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        /* 行内元素 */
+        
+        div::before {
+            display: inline-block;
+            content: '我';
+            width: 30px;
+            height: 40px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1 创建的元素属于行内元素
+        2 新创建的这个元素在文档中是找不到的，所以我们称为伪元素
+        3 必须要用content属性
+        4 伪元素选择器和标签选择器一样，权重为1
+    -->
+    <div>
+        是
+    </div>
+</body>
+
+</html>

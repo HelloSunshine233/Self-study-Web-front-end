@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <style>
+        /* 1 选择ul里面的第一个孩子 小li */
+        /* ul li 后代选择器 */
+        
+        ul li:first-child {
+            color: skyblue;
+        }
+        
+        ul li:last-child {
+            color: fuchsia;
+        }
+        
+        ul li:nth-child(4) {
+            color: red;
+        }
+        
+        ul li:nth-child(even) {
+            background-color: pink;
+        }
+        
+        ol li:nth-child(n) {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- /* n 可以是数字，关键字和公式 */
+        /* n 可以是关键字：even偶数，odd奇数 */
+        1 2n 偶数   2n+1奇数 n+5从第5个开始到最后
+        -n+5 前五个
+     -->
+    <!-- 
+        1 结构伪类选择器主要是根据文档结构来选择器元素，常用语根据父级选择器里面的子元素
+        2 结构伪类选择器，可以根据元素在文档中所处的位置，来动态选择元素，从而减少HTML文档对ID或类的依赖，有助于保持代码干净整洁。 
+    -->
+    <!-- 
+
+        1 nth-of-type意思是和那个nth-child 不一样的，后者是把所有的孩子都排列成号
+     -->
+    <ul>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+    <ol>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ol>
+
+</body>
+
+</html>

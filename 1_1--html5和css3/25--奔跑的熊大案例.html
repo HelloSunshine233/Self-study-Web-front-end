@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ccc;
+        }
+        
+        div {
+            /* 这个定位是以父盒子为基准的 */
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background: url(images/bear.png) no-repeat;
+            animation: bear .4s steps(8) infinite, move 3s forwards;
+            /* 让文字强制在一行内显示 */
+            /* white-space: nowrap; */
+        }
+        
+        @keyframes bear {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -1600px 0;
+            }
+        }
+        
+        @keyframes move {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: 50%;
+                /* margin-left: -100px */
+                /* 居中显示 */
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

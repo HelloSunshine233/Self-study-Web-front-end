@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+        
+        .map {
+            position: relative;
+            width: 747px;
+            height: 616px;
+            background: url(images/map.png) no-repeat;
+            margin: 0 auto;
+        }
+        
+        .city {
+            position: absolute;
+            top: 227px;
+            right: 193px;
+            color: #fff;
+        }
+        /* 上面的东西会直接继承下去 */
+        
+        .tb {
+            top: 500px;
+            right: 80px;
+        }
+        
+        .gz {
+            top: 536px;
+            right: 190px;
+        }
+        
+        .dotted {
+            width: 8px;
+            height: 8px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+        
+        .city div[class^="pulse"] {
+            /* 1 前面四行代码可以保证那个子盒子在父盒子里面中心显示 */
+            /* 就是中心显示的意思 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 12px #009dfd;
+            border-radius: 50%;
+            /* 设置波纹的运动状态 */
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* animation: move 2s linear 0s infinite alternate forwards; */
+            animation: pulse 2s linear 0s infinite;
+        }
+        
+        .city div.pulse2 {
+            animation-delay: 0.4s;
+        }
+        
+        .city div.pulse3 {
+            animation-delay: 0.8s;
+        }
+        
+        @keyframes pulse {
+            0% {}
+            70% {
+                width: 40px;
+                height: 40px;
+                /* 透明度 从 0.0 （完全透明）到 1.0（完全不透明）*/
+                opacity: 1;
+            }
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city tb">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city gz">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

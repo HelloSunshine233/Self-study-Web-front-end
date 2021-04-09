@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /* 1 transition: 要过渡的属性 花费的时间 运动曲线 何时开始 */
+            /* transition: width .8s, height .5s; */
+            transition: all .5s;
+        }
+        
+        div:hover {
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1 transition: 要过渡的属性 花费的时间 运动曲线 何时开始;
+        （1）要过渡的属性: 宽度高度 背景颜色 内外边距都可以。也可以都选择（all）
+        （2）单位是秒 必须写单位 0.5s
+        （3）运动曲线： 默认是ease
+        （4） 何时开始：单位是秒
+     -->
+    <div>
+
+    </div>
+</body>
+
+</html>

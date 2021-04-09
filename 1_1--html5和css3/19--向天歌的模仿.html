@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>向天歌样式模仿</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .content_wrapper {
+            /* float: left; */
+            width: 312px;
+            height: 419px;
+            /* background-color: pink; */
+            margin: 100px auto;
+            border: 1px solid #ccc;
+        }
+        
+        .content_wrapper:hover {
+            border: 1px solid #42B8F1;
+            background-color: #42B8f1;
+        }
+        
+        .item_wrapper p:hover {
+            color: #fff;
+            border: 1px solid #42B8f1;
+            background-color: #42B8f1;
+        }
+        
+        .item_tags a:hover {
+            color: #fff;
+            border: 1px solid #42B8f1;
+            background-color: #42B8f1;
+        }
+        /* 1 第一个盒子的开始 */
+        
+        .item_mask {
+            /* float: left; */
+            overflow: hidden;
+            width: 312px;
+            height: 175px;
+        }
+        
+        .item_mask a {
+            display: block;
+            width: 312px;
+            height: 175px;
+        }
+        
+        .item_mask img {
+            width: 100%;
+            transition: all .4s;
+        }
+        
+        .item_mask img:hover {
+            transform: scale(1.1);
+        }
+        /* 2 中间部分的内容 */
+        
+        .item_wrapper {
+            /* float: left; */
+            width: 312px;
+            height: 155px;
+            /* background-color: aqua; */
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .item_wrapper .title {
+            height: 30px;
+            color: #333;
+            line-height: 30px;
+            font-size: 17px;
+            padding: 30px 0 15px 30px;
+        }
+        
+        .item_wrapper .description {
+            overflow: hidden;
+            height: 52px;
+            color: #999;
+            line-height: 26px;
+            font-size: 13px;
+            padding: 0 30px;
+        }
+        /* 3  后面的内容 */
+        
+        .item_tags {
+            /* float: left; */
+            width: 312px;
+            height: 49px;
+            /* background-color: salmon; */
+        }
+        
+        .item_tags a {
+            display: block;
+            padding: 0 30px;
+            text-decoration: none;
+            color: #828282;
+            font-size: 12px;
+            line-height: 49px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content_wrapper">
+        <div class="item_mask">
+            <a href="https://www.topppt.cn/list/post/1203757/">
+                <img src="images/XTG4.png" alt="">
+            </a>
+        </div>
+        <div class="item_wrapper">
+            <p class="title">Pr剪辑上分攻略</p>
+            <p class="description">全实战案例教学，零基础逐级突破电影混剪、旅拍vlog、综艺节目效果、创意视频，手把手带你玩转拍摄和剪辑订购课程</p>
+        </div>
+        <div class="item_tags">
+            <a href="#">讲师：李兴兴</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
