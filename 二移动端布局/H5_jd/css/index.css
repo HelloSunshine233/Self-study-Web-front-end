@@ -1,0 +1,219 @@
+body {
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 640px;
+    background: #fff;
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #666;
+    background-color: #ccc;
+    /* height: 3000px; */
+}
+
+.app {
+    height: 50px;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    /* 图片的取掉上面显示的边距 */
+    vertical-align: top;
+}
+
+.app ul li {
+    float: left;
+    height: 50px;
+    background-color: #232326;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+}
+
+.app ul li:nth-child(1) {
+    width: 10%;
+}
+
+.app ul li:nth-child(1) img {
+    width: 16px;
+    /* 1 图片和文字水平居中对齐，默认的是和底线对齐 */
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(2) {
+    width: 10%;
+}
+
+.app ul li:nth-child(2) img {
+    width: 35px;
+    /* 1 图片和文字水平居中对齐，默认的是和底线对齐 */
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(3) {
+    width: 50%;
+}
+
+.app ul li:nth-child(4) {
+    width: 30%;
+    background-color: #CD2525;
+}
+
+
+/* 2 搜索框的开始 */
+
+.search-wap {
+    /* (1) 固定定位好像不占用位置 */
+    position: fixed;
+    /* 外边距塌陷的问题 */
+    overflow: hidden;
+    width: 100%;
+    height: 45px;
+    min-width: 320px;
+    max-width: 640px;
+}
+
+.search-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: pink; */
+    width: 40px;
+    height: 44px;
+}
+
+.search-btn::before {
+    content: "";
+    /* 原来是行内元素 */
+    display: block;
+    width: 20px;
+    height: 18px;
+    margin: 14px 0 0 15px;
+    /* 缩放背景 */
+    background: url(../images/s-btn.png) no-repeat;
+    background-size: 20px 18px;
+}
+
+.search {
+    /* 子绝父相 */
+    position: relative;
+    margin: 0 45px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-top: 7px;
+}
+
+.jd-icon {
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    width: 20px;
+    height: 15px;
+    background: url(../images/jd.png) no-repeat;
+    /* 缩放背景 */
+    background-size: 20px 15px;
+}
+
+.jd-icon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 26px;
+    /* 京东官网页面时用border来做的，也是挺不错的 */
+    border-right: 1px solid #ddd;
+    /* width: 1px; */
+    height: 16px;
+    /* background-color: #ccc; */
+}
+
+.sou {
+    position: absolute;
+    top: 9px;
+    left: 50px;
+    width: 18px;
+    height: 15px;
+    background: url(../images/jd-sprites.png) no-repeat -82px 0;
+    /* 二倍法精灵图的做法  */
+    /* 
+        (1) 在firework里面把精灵图等比例缩放为原来的一半
+        (2) 之后根据大小测量坐标
+        (3) 注意代码里面的background-size也要写: 精良图为原来的一半（但是我们最后firework中不要保存，要不原来的文件出问题了）
+    */
+    background-size: 200px auto;
+}
+
+.search-login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* background-color: purple; */
+    width: 40px;
+    height: 44px;
+    line-height: 44px;
+    /* text-align: center; */
+    color: #fff;
+}
+
+
+/* 3 主题部分的开始   为什么产生不了继承的效果呢？*/
+
+
+/* .slider img {
+    width: 100%;
+} */
+
+.slider img {
+    width: 100%;
+}
+
+
+/* 品牌日的制作 */
+
+.brand div {
+    float: left;
+    width: 33.33%;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+.brand {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+
+/* 导航栏的做法 */
+
+nav {
+    padding-top: 5px;
+}
+
+nav a {
+    float: left;
+    width: 20%;
+    /* 文字和图片居中对齐 */
+    text-align: center;
+}
+
+nav a img {
+    width: 40px;
+    margin: 10px 0;
+}
+
+nav a span {
+    display: block;
+}

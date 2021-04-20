@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=1.0,
+    maximum-scale=1.0,minimum-scale=1.0">
+    <!-- /* 1 先引入移动端的css样式 */ -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- 2 引入自己写的样式 -->
+    <link rel="stylesheet" href="css/index.css">
+    <title>京东页面的制作</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+        伪类选择器与伪元素选择器 之前总以为这两个东西是一样的，其实他们的作用大不相同哦。他们的作用是：可以为文档中不一定存在的结构制定样式，他们不是通过文档结构向页面中添加样式。  
+
+         一、伪类选择器  是用来选择某个类，或者说，选择的是某个类的状态。  1、链接伪类  【:link】:  【:visited】   2、动态伪类  【:focus】  【:hover】  【:active】  3、静态伪类  【:first-child】：选择元素的第一个子元素。  【*:lang(语言类名)】：将文档中的某个语言全部改为某个样式。  4、伪类的结合使用  【a:link:hover】  注意不要将互斥的伪类结合在一起使用，用户代理会忽略这种选择器。  
+           
+        二、伪元素选择器  是用来在文档中插入假象的元素。CSS2.1的写法。  1、首字母和首行  【:first-letter】：  【:first-line】：  2、之前和之后  【:before】：  【:after】：
+        
+        三、伪元素的常见用法  问：经常见到::after和:after，为什么会出现单冒号和双冒号？  答：单冒号用于CSS3伪类，双冒号英语css3伪元素。在CSS3中引入伪元素不再允许使用单冒号的写法，因此以后在某元素前后插入内容，要用双引号。
+     -->
+    <!-- 1 顶部 -->
+    <header class="app">
+        <ul>
+            <li>
+                <img src="images/close.png" alt="">
+            </li>
+            <li>
+                <img src="images/logo.png" alt="">
+            </li>
+            <li>
+                打开京东APP 购物更轻松
+            </li>
+            <li>
+                立即打开
+            </li>
+        </ul>
+    </header>
+    <!-- 2 搜素框 -->
+    <div class="search-wap">
+        <!-- 利用before来写，我是怎么也没有想到，这个就是伪元素选择器 -->
+        <div class="search-btn"></div>
+        <div class="search">
+            <div class="jd-icon"></div>
+            <div class="sou"></div>
+        </div>
+        <div class="search-login">登录</div>
+    </div>
+    <!-- 3 主题部分的开始 -->
+    <div class="main-content">
+        <!-- 滑动图 -->
+        <div class="slider">
+            <img src="upload/lvXing.dpg" alt="">
+        </div>
+        <!-- 品牌日的做法 -->
+        <div class="brand">
+            <div>
+                <a href="https://pro.m.jd.com/mall/active/Z9SFHzXMipvMdst4u47bLuxbiDj/index.html">
+                    <img src="upload/PPR1.dpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="https://pro.m.jd.com/mall/active/Z9SFHzXMipvMdst4u47bLuxbiDj/index.html">
+                    <img src="upload/PPR2.dpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="https://pro.m.jd.com/mall/active/Z9SFHzXMipvMdst4u47bLuxbiDj/index.html">
+                    <img src="upload/PPR3.dpg" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- 导航栏的做法 直接用nav就行了-->
+        <nav>
+            <a href="#">
+                <img src="upload/p1.png" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="#">
+                <img src="upload/p2.png" alt="">
+                <span>京东数码</span>
+            </a>
+            <a href="#">
+                <img src="upload/p3.png" alt="">
+                <span>京东服饰</span>
+            </a>
+            <a href="#">
+                <img src="upload/p4.png" alt="">
+                <span>京东生鲜</span>
+            </a>
+            <a href="#">
+                <img src="upload/p5.png" alt="">
+                <span>京东到家</span>
+            </a>
+            <a href="#">
+                <img src="upload/p6.png" alt="">
+                <span>充值缴费</span>
+            </a>
+            <a href="#">
+                <img src="upload/p7.png" alt="">
+                <span>9.9元拼</span>
+            </a>
+            <a href="#">
+                <img src="upload/p8.png" alt="">
+                <span>领劵</span>
+            </a>
+            <a href="#">
+                <img src="upload/p9.png" alt="">
+                <span>领津贴</span>
+            </a>
+            <a href="#">
+                <img src="upload/p10.png" alt="">
+                <span>PLUS会员</span>
+            </a>
+        </nav>
+    </div>
+</body>
+
+</html>

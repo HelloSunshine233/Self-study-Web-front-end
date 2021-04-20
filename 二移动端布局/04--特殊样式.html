@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            /* 去掉移动端点击链接会出现的背景高亮的问题 */
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        input {
+            /* 按钮边上的高亮边框去掉 */
+            -webkit-appearance: none;
+        }
+        
+        a,
+        img {
+            /* 禁止长按页面时弹出菜单 */
+            -webkit-touch-callout: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">黑马</a>
+    <input type="button" value="按钮">
+</body>
+
+</html>
